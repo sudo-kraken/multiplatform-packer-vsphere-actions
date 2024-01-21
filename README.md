@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Multi\-Os-Packer+Modules+for+GitHub+Actions" alt="Typing SVG"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Multi-Os+Packer+Modules+for+GitHub+Actions" alt="Typing SVG"/>
 </p>
 
 <p align="center">
