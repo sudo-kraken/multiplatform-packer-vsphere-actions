@@ -37,7 +37,7 @@ disk_eagerly_scrub       = false
 vm_disk_controller_type  = ["pvscsi"]
 vm_network_card          = "vmxnet3"
 vm_boot_wait             = "10s"
-ssh_username             = "administrator"
+ssh_username             = "admin"
 
 // ISO Objects
 
