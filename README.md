@@ -21,4 +21,4 @@
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python" /></a>
 </p>
 
-This repo will also allow you to automate the creation of image templates to be used inconjuction with Terraform for automated deployment pipelines, each template type has its own README with instructions for usage.
+This repo will also allow you to automate the creation of image templates to be used inconjuction with Terraform for automated deployment pipelines within a vSphere environment, each template type has its own README with instructions for usage, but all deployments will be executed via GitHub Actions utilising a self-hosted runner.
