@@ -23,7 +23,7 @@ http_directory = "http"
 
 // Virtual Machine Settings
 
-vm_name                  = "Ubnt-2204_02"
+vm_name                  = "UBNT-2204-PKR-V1"
 vm_guest_os_type         = "ubuntu64Guest"
 vm_version               = 18
 vm_firmware              = "bios"
