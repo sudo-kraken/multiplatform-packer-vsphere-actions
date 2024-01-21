@@ -1,0 +1,41 @@
+#cloud-config
+autoinstall:
+    version: 1
+    early-commands:
+        - sudo systemctl stop ssh
+    locale: en_GB.UTF-8
+    keyboard:
+        layout: gb
+    packages: [open-vm-tools, openssh-server, net-tools, perl, open-iscsi, ntp, curl, vim, ifupdown, zip, unzip, gnupg2, software-properties-common, apt-transport-https, ca-certificates, lsb-release, python3-pip, jq, cloud-init, awscli]
+    network:
+        network:
+            version: 2
+            ethernets:
+                ens192:
+                    addresses:
+                    - x.x.x.x/xx
+                    gateway4: x.x.x.x
+                    nameservers:
+                      addresses:
+                      - 1.1.1.1
+                      - 1.0.0.1
+                      search: []
+    identity:
+        hostname: ubnt-22042-template
+        username: administrator
+        # get the encypted password using mkpasswd
+        # mkpasswd -m sha-512 --rounds=4096
+        password: "encrypted password here"
+    ssh:
+        install-server: yes
+        allow-pw: yes
+        authorized-keys:
+            - sshpublickeyhere
+    storage:
+        layout:
+            name: direct
+    user-data:
+        disable_root: false
+    late-commands:
+        - echo 'administrator ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/administrator
+        - curtin in-target --target=/target -- chmod 440 /etc/sudoers.d/administrator

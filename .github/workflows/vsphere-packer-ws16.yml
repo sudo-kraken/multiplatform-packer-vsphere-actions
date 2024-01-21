@@ -1,0 +1,42 @@
+name: 'Packer vSphere Windows Server 2016 CI Template Generator'
+
+env:
+  # vSphere password used for authentication
+  VCENTER_PASSWORD: ${{ secrets.VSPHERE_PASSWORD }}
+
+on:
+  workflow_dispatch:
+  
+permissions:
+  contents: read
+  
+jobs:
+  packer:
+    name: 'Packer Build Pipeline'
+    runs-on: [self-hosted, devops]
+    environment: production  
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+ 
+    - name: Packer Setup
+      uses: hashicorp/setup-packer@main
+      id: setup
+      with:
+        version: "latest"
+        
+    - name: Run init        
+      working-directory: ./VMware/Windows-2016
+      run: packer init windows2016.pkr.hcl
+
+    - name: Run validate
+      working-directory: ./VMware/Windows-2016
+      run: packer validate -var-file=variables.pkrvars.hcl windows2016.pkr.hcl
+      env:
+        PKR_VAR_vcenter_password: ${{ env.VCENTER_PASSWORD }}
+
+    - name: Run build
+      working-directory: ./VMware/Windows-2016
+      run: packer build -var-file=variables.pkrvars.hcl windows2016.pkr.hcl
+      env:
+        PKR_VAR_vcenter_password: ${{ env.VCENTER_PASSWORD }}
