@@ -23,10 +23,10 @@ vcenter_folder = "PATH/TO/FOLDER/HERE"
 vm_network = "PORT_GROUP_NAME_HERE"
 
 // Name to assign to the VM
-vm_name = "WS19-PKR-V2"
+vm_name = "WS19-PKR-V1"
 
 // Notes to assign to the VM
-vm_notes = "WS19-PKR-V2 Built by [ GitHub Actions - Packer ]"
+vm_notes = "WS19-PKR-V1 Built by [ GitHub Actions - Packer ]"
 
 // Number of cores to assign to the VM
 numcores = "8"
