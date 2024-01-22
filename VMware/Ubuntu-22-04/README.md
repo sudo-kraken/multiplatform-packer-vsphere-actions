@@ -55,7 +55,7 @@ To use this deployment, follow these steps:
 
 ## License
 
-This Packer deployment is open-source and available under the MIT License.
+This Packer deployment is open-source and available under the GNU General Public License v3.0.
 
 ## Authors
 
