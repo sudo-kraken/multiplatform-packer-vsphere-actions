@@ -26,7 +26,7 @@ vm_network = "PORT_GROUP_NAME_HERE"
 vm_name = "WS22-PKR-V1"
 
 // Notes to assign to the VM
-vm_notes = "WS22-PKR-V1 Built [ GitHub Actions - Packer ]"
+vm_notes = "WS22-PKR-V1 Built by [ GitHub Actions - Packer ]"
 
 // Number of cores to assign to the VM
 numcores = "4"
