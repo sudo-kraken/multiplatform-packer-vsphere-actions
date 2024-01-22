@@ -21,4 +21,25 @@
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python" /></a>
 </p>
 
-This repo will also allow you to automate the creation of image templates to be used inconjuction with Terraform for automated deployment pipelines within a vSphere environment, each template type has its own README with instructions for usage, but all deployments will be executed via GitHub Actions utilising a self-hosted runner.
+## Overview
+This repository forms the first part of a comprehensive infrastructure-as-code (IAC) pipeline. It focuses on automating the creation of image templates for various operating systems, including Ubuntu, Rocky Linux, and Windows Server versions. These templates are essential for deploying virtual machines within a vSphere environment.
+
+> [!NOTE]  
+> Each template type in this repo has its own README detailing usage instructions. All deployments are executed through GitHub Actions, utilising a self-hosted GitHub runner to ensure seamless automation.
+
+## Integration with Terraform Deployment Repository
+The templates generated here are designed to be directly utilised by my second repository, which leverages Terraform for the deployment of these VMs. This integration provides a streamlined process from template creation to VM deployment.
+[Terraform Repository for Deployment](https://github.com/sudo-kraken/multiplatform-terraform-module-actions)
+
+After creating templates with this repository, head over to my Terraform Deployment Repository to deploy your virtual machines and other resources. This second part of my IAC pipeline allows you to deploy across multiple providers, including AWS and VMware, using the templates generated here.
+Why This Integration Matters
+  - Efficiency: Automate the entire process from OS image creation to VM deployment.
+  - Consistency: Ensure standardized configurations across your deployments.
+  - Scalability: Easily scale your infrastructure with templated, automated deployments.
+
+## Usage
+To begin using this repository:
+  -  Familiarise yourself with each template's README.
+  -  Set up your environment for GitHub Actions.
+  -  Follow the detailed instructions for creating templates.
+  -  Once templates are created, use them in conjunction with my Terraform repository for full deployment cycles.
