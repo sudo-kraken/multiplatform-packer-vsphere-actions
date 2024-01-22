@@ -20,10 +20,10 @@
   <a href="https://docs.microsoft.com/en-us/powershell/"><img src="https://img.shields.io/badge/-PowerShell-5391FE?style=flat&logo=powershell&logoColor=white" alt="PowerShell" /></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python" /></a>
 </p>
-
-<p align="center">
 <br>
-<a href="https://www.buymeacoffee.com/jharrison94"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"></a></p>
+<p align="center">
+  <a href="https://www.buymeacoffee.com/jharrison94" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60px" width="217px" >
+    
 
 ## Overview
 This repository forms the first part of a comprehensive infrastructure-as-code (IAC) pipeline. It focuses on automating the creation of image templates for various operating systems, including Ubuntu, Rocky Linux, and Windows Server versions. These templates are essential for deploying virtual machines within a vSphere environment.
