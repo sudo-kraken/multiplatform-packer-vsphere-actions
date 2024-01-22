@@ -23,10 +23,10 @@ vcenter_folder = "PATH/TO/FOLDER/HERE"
 vm_network = "PORT_GROUP_NAME_HERE"
 
 // Name to assign to the VM
-vm_name = "WS22-PKR-V2"
+vm_name = "WS22-PKR-V1"
 
 // Notes to assign to the VM
-vm_notes = "WS22-PKR-V2 Built by J Harrison [ GitHub Actions - Packer ]"
+vm_notes = "WS22-PKR-V1 Built [ GitHub Actions - Packer ]"
 
 // Number of cores to assign to the VM
 numcores = "4"
