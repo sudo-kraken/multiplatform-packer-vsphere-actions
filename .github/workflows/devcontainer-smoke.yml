@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: Devcontainer Smoke Test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: devcontainer-smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    name: Smoke Test Dev Container
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Build devcontainer
+        uses: devcontainers/ci@v0.3
+        with:
+          push: never
+          runCmd: echo "container up"
+
+      - name: Verify Packer in devcontainer
+        uses: devcontainers/ci@v0.3
+        with:
+          push: never
+          runCmd: |
+            bash -lc '
+              set -euo pipefail
+
+              echo "Packer version"
+              packer version
+
+              echo "OK: Packer is working in devcontainer"
+            '
