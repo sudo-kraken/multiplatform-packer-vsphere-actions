@@ -11,7 +11,6 @@
   "mounts": [
     "source=/tmp,target=/tmp,type=bind,consistency=cached"
   ],
-  "postCreateCommand": "packer init packer/templates/ubuntu",
   "userEnvProbe": "loginInteractiveShell",
   "customizations": {
     "vscode": {
