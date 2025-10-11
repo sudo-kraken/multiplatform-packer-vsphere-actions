@@ -3,7 +3,6 @@
   description: "Automated dependency updates for multiplatform-packer-vsphere-actions",
   extends: [
     "config:recommended",
-    "docker:enableMajor",
     "replacements:k8s-registry-move",
     ":automergePr",
     ":automergePatch",
@@ -12,23 +11,19 @@
     ":dependencyDashboard",
     ":semanticCommits",
     ":timezone(Europe/London)",
+    "github>sudo-kraken/multiplatform-packer-vsphere-actions//.github/renovate/actions.json5",
     "github>sudo-kraken/multiplatform-packer-vsphere-actions//.github/renovate/devcontainers.json5",
     "github>sudo-kraken/multiplatform-packer-vsphere-actions//.github/renovate/labels.json5",
-    "github>sudo-kraken/multiplatform-packer-vsphere-actions//.github/renovate/semanticCommits.json5",
     "github>sudo-kraken/multiplatform-packer-vsphere-actions//.github/renovate/packer.json5",
+    "github>sudo-kraken/multiplatform-packer-vsphere-actions//.github/renovate/semanticCommits.json5",
   ],
   dependencyDashboardTitle: "Renovate Dashboard 🤖",
   suppressNotifications: ["prEditedNotification", "prIgnoreNotification"],
   rebaseWhen: "conflicted",
-  schedule: ["before 9pm on friday"],
+  pruneStaleBranches: true,
+  pruneBranchAfterAutomerge: true,
   prConcurrentLimit: 5,
   labels: ["dependencies"],
+  schedule: ["after 9pm on sunday"],
   minimumReleaseAge: "7 days",
-
-  packageRules: [
-    {
-      matchManagers: ["github-actions"],
-      minimumReleaseAge: null,
-    },
-  ],
 }
