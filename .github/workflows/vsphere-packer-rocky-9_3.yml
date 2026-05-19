@@ -22,7 +22,7 @@ jobs:
       uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
  
     - name: Packer Setup
-      uses: hashicorp/setup-packer@main
+      uses: hashicorp/setup-packer@81d37653906f884aa356bd1208c578820280fdc6 # main
       id: setup
       with:
         version: "latest"
